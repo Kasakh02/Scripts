@@ -14,7 +14,7 @@ if !grep "new=" "$ZSH_FILE" &> !grep "new=" "$BASH_FILE" &> /dev/null; then
 	echo "Alias \"new\" successfully added to .zshrc and .bashrc\n"
 fi
 
-rm -rf Scripts
+rm -rf "$HOME/Scripts"
 cd -
 
 exec "$SHELL" || exit
