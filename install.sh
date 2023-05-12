@@ -15,6 +15,6 @@ if ! grep "new=" "$ZSH_FILE" &> ! grep "new=" "$BASH_FILE" &> /dev/null; then
 fi
 
 rm -rf "$HOME/Scripts"
-cd -
+#cd -
 
 exec "$SHELL" || exit
