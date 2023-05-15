@@ -19,8 +19,8 @@ def hpp_write(file, i):
     file.write("\t\t\n\tpublic:\n")
     file.write("\t\t" + sys.argv[i] + "();\n")
     file.write("\t\t~" + sys.argv[i] + "();\n")
-    file.write("\t\t" + sys.argv[1] + "(const " + sys.argv[1]  + "& copy);\n")
-    file.write("\t\t" + sys.argv[1] + "& operator=(const " + sys.argv[1] + "& copy);\n")
+    file.write("\t\t" + sys.argv[i] + "(const " + sys.argv[i]  + "& copy);\n")
+    file.write("\t\t" + sys.argv[i] + "& operator=(const " + sys.argv[i] + "& copy);\n")
     file.write("};\n")
     
     file.write("\n#endif")
