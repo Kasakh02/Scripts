@@ -3,12 +3,14 @@
 # Color variables
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
 NC='\033[0m' # No color
 
 cd "$HOME" || exit
 
-git clone https://github.com/Kasakh02/Scripts.git > >(tee /dev/tty) 2>&1
-CLONE_EXIT_CODE=${PIPESTATUS[0]}
+echo -e "${YELLOW}Clonning into 'Scripts'...${NC}"
+git clone https://github.com/Kasakh02/Scripts.git &> /dev/null
+echo -e "${GREEN}'Scripts' redy!${NC}"
 
 if [ -d "$HOME/.scripts" ]; then
   echo -e "${RED}Error:${NC} .scripts already exists!" >&2
