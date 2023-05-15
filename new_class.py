@@ -50,6 +50,10 @@ def cpp_write(file, i):
 def cpp_file(i):
     file = sys.argv[i]
     
+    if not (os.path.exists("src")):
+      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "src" not present')
+      return
+    
     if (os.path.exists("src/" + file + ".cpp")):
       print(Fore.RED + 'Error: ' + Fore.RESET + 'file "' + file + '.cpp" already exists')
       return
@@ -57,7 +61,7 @@ def cpp_file(i):
     try:
       file_open = open("src/" + file + ".cpp", "a")
     except OSError:
-      print(Fore.RED + 'Error: ' + Fore.RESET + ' cannot create "' + file_open + '"')
+      print(Fore.RED + 'Error: ' + Fore.RESET + ' cannot create "' + file + '.cpp"')
       return
     
     cpp_write(file_open, i)
@@ -67,6 +71,10 @@ def cpp_file(i):
 def hpp_file(i):
     file = sys.argv[i]
     
+    if not (os.path.exists("inc")):
+      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "inc" not present')
+      return
+    
     if (os.path.exists("inc/" + file + ".hpp")):
       print(Fore.RED + 'Error: ' + Fore.RESET + 'file "' + file + '.hpp" already exists')
       return
@@ -74,7 +82,7 @@ def hpp_file(i):
     try:
       file_open = open("inc/" + file + ".hpp", "a")
     except OSError:
-      print(Fore.RED + 'Error: ' + Fore.RESET + ' cannot create "' + file_open + '"')
+      print(Fore.RED + 'Error: ' + Fore.RESET + ' cannot create "' + file + '.cpp"')
       return
     
     hpp_write(file_open, i)
