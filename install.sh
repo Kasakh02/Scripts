@@ -4,7 +4,7 @@ cd "$HOME" || exit
 
 git clone https://github.com/Kasakh02/Scripts.git || exit
 
-if !mkdir .scripts 2>/dev/null; then
+if !mkdir .scripts &> /dev/null; then
 	echo "File .scripts already exists"
 fi
 
