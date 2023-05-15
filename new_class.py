@@ -66,7 +66,7 @@ def cpp_file(i):
     
     cpp_write(file_open, i)
     
-    print(Fore.GREEN + 'Success:' + Fore.RESET + '.cpp files successfully created for class "' + file + '"')
+    print(Fore.GREEN + 'Success: ' + Fore.RESET + '.cpp files successfully created for class "' + file + '"')
 
 def hpp_file(i):
     file = sys.argv[i]
