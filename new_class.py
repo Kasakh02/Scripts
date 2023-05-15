@@ -51,7 +51,7 @@ def cpp_file(i):
     file = sys.argv[i]
     
     if not (os.path.exists("src")):
-      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "src" not present for class ' + file)
+      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "src" not present for class "' + file + '"')
       return
     
     if (os.path.exists("src/" + file + ".cpp")):
@@ -66,13 +66,13 @@ def cpp_file(i):
     
     cpp_write(file_open, i)
     
-    print(Fore.GREEN + 'Success:' + Fore.RESET + '.cpp files successfully created! for class ' + file)
+    print(Fore.GREEN + 'Success:' + Fore.RESET + '.cpp files successfully created! for class "' + file + '"')
 
 def hpp_file(i):
     file = sys.argv[i]
     
     if not (os.path.exists("inc")):
-      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "inc" not present for class ' + file)
+      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "inc" not present for class "' + file + '"')
       return
     
     if (os.path.exists("inc/" + file + ".hpp")):
@@ -87,7 +87,7 @@ def hpp_file(i):
     
     hpp_write(file_open, i)
     
-    print(Fore.GREEN + 'Success: ' + Fore.RESET + '.hpp files successfully created for class ' + file)
+    print(Fore.GREEN + 'Success: ' + Fore.RESET + '.hpp files successfully created for class "' + file + '"')
   
 for i in range(len(sys.argv) - 1):
     hpp_file(i + 1)
