@@ -9,7 +9,7 @@ NC='\033[0m' # No color
 cd "$HOME" || exit
 
 echo -e "${YELLOW}Clonning into 'Scripts'...${NC}" >&2
-git clone https://github.com/Kasakh02/Scripts.git &> /dev/null
+git clone https://github.com/Kasakh02/Scripts.git 2>&1 | grep -o "Cloning into 'Scripts'...\\|Successfully cloned." | uniq
 echo -e "${GREEN}'Scripts' ready!${NC}" >&2
 
 if [ -d "$HOME/.scripts" ]; then
