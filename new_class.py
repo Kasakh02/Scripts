@@ -61,6 +61,8 @@ def cpp_file(i):
       return
     
     cpp_write(file_open, i)
+    
+    print(Fore.GREEN + '.cpp files successfully created!' + Fore.RESET)
 
 def hpp_file(i):
     file = sys.argv[i]
@@ -76,6 +78,8 @@ def hpp_file(i):
       return
     
     hpp_write(file_open, i)
+    
+    print(Fore.GREEN + '.hpp files successfully created!' + Fore.RESET)
   
 for i in range(len(sys.argv) - 1):
     hpp_file(i + 1)

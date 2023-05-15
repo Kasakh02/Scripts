@@ -1,6 +1,7 @@
 import sys
 import os
 import shutil
+from colorama import Fore
 
 if (len(sys.argv) == 3):
 	main_folder = sys.argv[1]
@@ -13,10 +14,10 @@ try:
 		os.mkdir(main_folder)
 		nbr_exs = (int)(sys.argv[2])
 	else:
-		print("{number of exercises} has to be a valid integer")
+		print(Fore.RED + 'Error: ' + Fore.RESET + "{number of exercises} has to be a valid integer")
 		quit()
 except OSError:
-	print("file " + '"' + main_folder + '"' + " already exists")
+	print(Fore.RED + 'Error: ' + Fore.RESET + "file " + '"' + main_folder + '"' + " already exists")
 	quit()
 
 for i in range(nbr_exs):
