@@ -4,8 +4,8 @@ cd "$HOME" || exit
 
 git clone https://github.com/Kasakh02/Scripts.git || exit
 
-!mkdir .scripts 2>/dev/null; then
-echo "File .scripts already exists"
+if !mkdir .scripts 2>/dev/null; then
+	echo "File .scripts already exists"
 fi
 
 cp Scripts/*.py ./.scripts
