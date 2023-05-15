@@ -25,4 +25,4 @@ for i in range(nbr_exs):
 	os.mkdir(main_folder + "/ex0" + (str)(i) + "/src")
 	os.mkdir(main_folder + "/ex0" + (str)(i) + "/inc")
 
-print(Fore.GREEN + 'Success: ' + Fore.RESET + 'all ' + nbr_exs + ' exercises from project ' + main_folder + ' created')
+print(Fore.GREEN + 'Success: ' + Fore.RESET + 'all ' + str(nbr_exs) + ' exercises from project ' + main_folder + ' created')
