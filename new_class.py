@@ -1,5 +1,6 @@
 import sys
 import os
+from colorama import Fore
 
 if (len(sys.argv) < 2):
     print("Usage: class {classes} ...")
@@ -50,13 +51,13 @@ def cpp_file(i):
     file = sys.argv[i]
     
     if (os.path.exists("src/" + file + ".cpp")):
-      print('file "' + file + '.cpp" already exists')
+      print(Fore.RED + 'Error: ' + Fore.RESET + 'file "' + file + '.cpp" already exists')
       return
     
     try:
       file_open = open("src/" + file + ".cpp", "a")
     except OSError:
-      print('Error creating "' + file_open + '"')
+      print(Fore.RED + 'Error: ' + Fore.RESET + ' cannot create "' + file_open + '"')
       return
     
     cpp_write(file_open, i)
@@ -65,13 +66,13 @@ def hpp_file(i):
     file = sys.argv[i]
     
     if (os.path.exists("inc/" + file + ".hpp")):
-      print('file "' + file + '.hpp" already exists')
+      print(Fore.RED + 'Error: ' + Fore.RESET + 'file "' + file + '.hpp" already exists')
       return
     
     try:
       file_open = open("inc/" + file + ".hpp", "a")
     except OSError:
-      print('Error creating "' + file_open + '"')
+      print(Fore.RED + 'Error: ' + Fore.RESET + ' cannot create "' + file_open + '"')
       return
     
     hpp_write(file_open, i)
