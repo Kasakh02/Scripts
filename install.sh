@@ -10,7 +10,8 @@ cd "$HOME" || exit
 git clone https://github.com/Kasakh02/Scripts.git || exit
 
 if [ -d "$HOME/.scripts" ]; then
-  echo "${RED}Error:${NC}: .scripts already exists!"
+  echo "${RED}Error:${NC} .scripts already exists!"
+	rm -rf "$HOME/Scripts"
 	exit 1
 fi
 
