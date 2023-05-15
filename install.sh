@@ -42,6 +42,6 @@ else
 fi
 
 rm -rf "$HOME/Scripts"
-cd -
+cd - >/dev/null
 
 exec "$SHELL" || exit
