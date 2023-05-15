@@ -1,12 +1,20 @@
 #!/bin/bash
 
+# Color variables
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No color
+
 cd "$HOME" || exit
 
 git clone https://github.com/Kasakh02/Scripts.git || exit
 
-if !mkdir .scripts &> /dev/null; then
-	echo "File .scripts already exists"
+if [ -d "$HOME/.scripts" ]; then
+  echo "${RED}Error:${NC}: .scripts already exists!"
+	exit 1
 fi
+
+mkdir .scripts
 
 cp Scripts/*.py ./.scripts
 
