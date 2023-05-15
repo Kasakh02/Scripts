@@ -8,7 +8,7 @@ NC='\033[0m' # No color
 cd "$HOME" || exit
 
 git clone https://github.com/Kasakh02/Scripts.git 2>&1 | grep -o "Cloning into 'Scripts'...\\|Successfully cloned."
-CLONE_EXIT_CODE=${PIPESTATUS[0]}
+CLONE_EXIT_CODE=${PIPESTATUS[0]} || exit
 
 if [ -d "$HOME/.scripts" ]; then
   echo -e "${RED}Error:${NC} .scripts already exists!" >&2
