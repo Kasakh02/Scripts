@@ -44,14 +44,14 @@ def cpp_write(file, i):
     
     file.write(sys.argv[i] + "& " + sys.argv[i] + "::operator=(const " + sys.argv[i] + "& copy) {\n")
     file.write('\tstd::cout << "Default assignment operator called" << std::endl;\n')
-    file.write('\t(void)copy')
+    file.write('\t(void)copy;')
     file.write("\n}\n\n")
         
 def cpp_file(i):
     file = sys.argv[i]
     
     if not (os.path.exists("src")):
-      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "src" not present')
+      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "src" not present for class ' + file)
       return
     
     if (os.path.exists("src/" + file + ".cpp")):
@@ -72,7 +72,7 @@ def hpp_file(i):
     file = sys.argv[i]
     
     if not (os.path.exists("inc")):
-      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "inc" not present')
+      print(Fore.RED + 'Error: ' + Fore.RESET + 'folder "inc" not present for class ' + file)
       return
     
     if (os.path.exists("inc/" + file + ".hpp")):
