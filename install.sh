@@ -8,7 +8,7 @@ NC='\033[0m' # No color
 
 cd "$HOME" || exit
 
-echo  "${YELLOW}Cloning into 'Scripts'...${NC}" >&2
+echo -e "${YELLOW}Cloning into 'Scripts'...${NC}" >&2
 git clone --quiet https://github.com/Kasakh02/Scripts.git &>/dev/null
 echo -e "${GREEN}'Scripts' ready!${NC}" >&2
 
