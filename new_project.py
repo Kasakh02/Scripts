@@ -24,3 +24,5 @@ for i in range(nbr_exs):
 	os.mkdir(main_folder + "/ex0" + (str)(i))
 	os.mkdir(main_folder + "/ex0" + (str)(i) + "/src")
 	os.mkdir(main_folder + "/ex0" + (str)(i) + "/inc")
+
+print(Fore.GREEN + 'Success: ' + Fore.RESET + ' all exercises from project ' + main_folder + 'created')
