@@ -25,20 +25,20 @@ cp Scripts/*.py ./.scripts
 ZSH_FILE="$HOME/.zshrc"
 BASH_FILE="$HOME/.bashrc"
 
-if ! grep "new=" "$ZSH_FILE" &> ! grep "new=" "$BASH_FILE" &> /dev/null; then
-	printf "\nalias new=\"python3 %s/.scripts/new_project.py\"\n" "$HOME" >> "$ZSH_FILE"
-	printf "\nalias new=\"python3 %s/.scripts/new_project.py\"\n" "$HOME" >> "$BASH_FILE"
-	echo "Alias \"new\" successfully added to .zshrc and .bashrc\n"
+if ! grep "new=" "$ZSH_FILE" &> /dev/null && ! grep "new=" "$BASH_FILE" &> /dev/null; then
+  printf "\nalias new=\"python3 %s/.scripts/new_project.py\"\n" "$HOME" >> "$ZSH_FILE"
+  printf "\nalias new=\"python3 %s/.scripts/new_project.py\"\n" "$HOME" >> "$BASH_FILE"
+  echo "Alias \"new\" successfully added to .zshrc and .bashrc"
 else
-	echo -e "${RED}Error:${NC} Alias \"new\" already exists!"
+  echo -e "${RED}Error:${NC} Alias \"new\" already exists!"
 fi
 
-if ! grep "class=" "$ZSH_FILE" &> ! grep "class=" "$BASH_FILE" &> /dev/null; then
-	printf "\nalias class=\"python3 %s/.scripts/new_class.py\"\n" "$HOME" >> "$ZSH_FILE"
-	printf "\nalias class=\"python3 %s/.scripts/new_class.py\"\n" "$HOME" >> "$BASH_FILE"
-	echo "Alias \"class\" successfully added to .zshrc and .bashrc\n"
+if ! grep "class=" "$ZSH_FILE" &> /dev/null && ! grep "class=" "$BASH_FILE" &> /dev/null; then
+  printf "\nalias class=\"python3 %s/.scripts/new_class.py\"\n" "$HOME" >> "$ZSH_FILE"
+  printf "\nalias class=\"python3 %s/.scripts/new_class.py\"\n" "$HOME" >> "$BASH_FILE"
+  echo "Alias \"class\" successfully added to .zshrc and .bashrc"
 else
-	echo -e "${RED}Error:${NC} Alias \"class\" already exists!"
+  echo -e "${RED}Error:${NC} Alias \"class\" already exists!"
 fi
 
 rm -rf "$HOME/Scripts"
