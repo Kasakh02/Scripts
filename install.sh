@@ -8,9 +8,9 @@ NC='\033[0m' # No color
 
 cd "$HOME" || exit
 
-echo -e "${YELLOW}Clonning into 'Scripts'...${NC}"
+echo -e "${YELLOW}Clonning into 'Scripts'...${NC}" >&2
 git clone https://github.com/Kasakh02/Scripts.git &> /dev/null
-echo -e "${GREEN}'Scripts' redy!${NC}"
+echo -e "${GREEN}'Scripts' ready!${NC}" >&2
 
 if [ -d "$HOME/.scripts" ]; then
   echo -e "${RED}Error:${NC} .scripts already exists!" >&2
