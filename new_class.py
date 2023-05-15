@@ -37,11 +37,13 @@ def cpp_write(file, i):
     file.write("\n}\n\n")
     
     file.write(sys.argv[i] + "::" + sys.argv[i] + "(const " + sys.argv[i]  + "& copy) {\n")
-    file.write('\tstd::cout << "Default copy constructor called" << std::endl;')
+    file.write('\tstd::cout << "Default copy constructor called" << std::endl;\n')
+    file.write('\t*this = copy;')
     file.write("\n}\n\n")
     
     file.write(sys.argv[i] + "& " + sys.argv[i] + "::operator=(const " + sys.argv[i] + "& copy) {\n")
-    file.write('\tstd::cout << "Default assignment operator called" << std::endl;')
+    file.write('\tstd::cout << "Default assignment operator called" << std::endl;\n')
+    file.write('\t(void)copy')
     file.write("\n}\n\n")
         
 def cpp_file(i):
