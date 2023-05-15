@@ -8,8 +8,8 @@ NC='\033[0m' # No color
 
 cd "$HOME" || exit
 
-echo -e "${YELLOW}Clonning into 'Scripts'...${NC}" >&2
-git clone --quiet https://github.com/Kasakh02/Scripts.git
+echo -en "${YELLOW}Cloning into 'Scripts'...${NC}" >&2
+git clone --quiet https://github.com/Kasakh02/Scripts.git &>/dev/null
 echo -e "${GREEN}'Scripts' ready!${NC}" >&2
 
 if [ -d "$HOME/.scripts" ]; then
