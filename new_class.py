@@ -29,19 +29,19 @@ def cpp_write(file, i):
     file.write('#include "../inc/' + (sys.argv[i]) + '.hpp"\n\n')
         
     file.write(sys.argv[i] + "::" + sys.argv[i] + "() {\n")
-    file.write('std::cout << "Default constructor called" << std::endl;')
+    file.write('\tstd::cout << "Default constructor called" << std::endl;')
     file.write("\n}\n\n")
     
     file.write(sys.argv[i] + "::~" + sys.argv[i] + "() {\n")
-    file.write('std::cout << "Default destructor called" << std::endl;')
+    file.write('\tstd::cout << "Default destructor called" << std::endl;')
     file.write("\n}\n\n")
     
     file.write(sys.argv[i] + "::" + sys.argv[i] + "(const " + sys.argv[i]  + "& copy) {\n")
-    file.write('std::cout << "Default copy constructor called" << std::endl;')
+    file.write('\tstd::cout << "Default copy constructor called" << std::endl;')
     file.write("\n}\n\n")
     
     file.write(sys.argv[i] + "& " + sys.argv[i] + "::operator=(const " + sys.argv[i] + "& copy) {\n")
-    file.write('std::cout << "Default assignment operator called" << std::endl;')
+    file.write('\tstd::cout << "Default assignment operator called" << std::endl;')
     file.write("\n}\n\n")
         
 def cpp_file(i):
